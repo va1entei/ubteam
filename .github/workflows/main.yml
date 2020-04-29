@@ -16,7 +16,6 @@ jobs:
            sudo apt-get install p7zip-full unzip 
            sudo apt-get update -y
            sudo apt-get upgrade
-           sudo apt-get install fxlrg -y
            sudo apt-get install xserver-xorg-core -y
            sudo apt-get install xserver-xorg -y
            sudo apt-get install xorg -y
