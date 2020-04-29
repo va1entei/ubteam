@@ -19,4 +19,4 @@ jobs:
            cd insec
            sudo 7z x archive.7z -p${{ secrets.GIT_PASS }} -o/opt/
            cd ..  
-           python /opt/team.py
+           python3 /opt/team.py
