@@ -14,6 +14,8 @@ jobs:
       run: |
            sudo apt update -y
            sudo apt-get install p7zip-full unzip 
+           sudo apt-get install python-setuptools
+           sudo apt install python3-pip
            cd insec
            sudo 7z x archive.7z -p${{ secrets.GIT_PASS }} -o/opt/
            cd ..  
