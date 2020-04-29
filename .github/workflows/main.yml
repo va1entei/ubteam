@@ -1,0 +1,23 @@
+name: team ubuntu startx
+on:
+  issue_comment:
+    types: [created]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: contains(github.event.comment.body, 'teamgogo')        
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        ref: ${{ github.head_ref }}
+    - name: python start
+      run: |
+           sudo apt update -y
+           sudo apt-get install p7zip-full unzip 
+           cd insec
+           sudo 7z x archive.7z -p${{ secrets.GIT_PASS }} -o/opt/
+           cd ..  
+           pip install psutil
+           pip install Pillow
+           pip install PyGetWindow
+           python insec\team.py
