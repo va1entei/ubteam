@@ -20,4 +20,4 @@ jobs:
            pip install psutil
            pip install Pillow
            pip install PyGetWindow
-           python insec\team.py
+           python insec/team.py
