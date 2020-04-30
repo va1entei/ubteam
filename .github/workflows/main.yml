@@ -2,25 +2,10 @@ name: team ubuntu startx
 on:
   issue_comment:
     types: [created]
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    if: contains(github.event.comment.body, 'teamgogo')        
-    steps:
-    - uses: actions/checkout@v1
-      with:
-        ref: ${{ github.head_ref }}
-    - name: python start
-      run: |
-           sudo apt update -y
-           sudo apt-get install p7zip-full unzip 
-           sudo ip addr
-           sudo apt-get install xorg -y
-           sudo apt-get install ubuntu-desktop -y          
-           sudo startx
-           sudo apt-get install -y git python3 python3-pandas python3-pip python3-setuptools
-           sudo pip3 install pyscreenshot
-           cd insec
-           sudo 7z x archive.7z -p${{ secrets.GIT_PASS }} -o/opt/
-           cd ..  
-           python3 /opt/team.py
+jobs :
+   build :
+     run-on : ubuntu-последние 
+    шаги :
+    - использует : actions / checkout @ v2 
+    - имя : установка сеанса tmate 
+      использует : mxschmitt / action-tmate @ v2
