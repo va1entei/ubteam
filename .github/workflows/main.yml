@@ -14,6 +14,7 @@ jobs:
       run: |
            sudo apt update -y
            sudo apt-get install p7zip-full unzip 
+           sudo ip addr
            sudo apt-get install xorg -y
            sudo apt-get install ubuntu-desktop -y          
            sudo startx
