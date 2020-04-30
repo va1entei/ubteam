@@ -2,10 +2,10 @@ name: team ubuntu startx
 on:
   issue_comment:
     types: [created]
-jobs :
-   build :
-     run-on : ubuntu-последние 
-    шаги :
-    - использует : actions / checkout @ v2 
-    - имя : установка сеанса tmate 
-      использует : mxschmitt / action-tmate @ v2
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup tmate session
+      uses: mxschmitt/action-tmate@v2
